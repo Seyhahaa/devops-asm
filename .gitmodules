@@ -1,6 +1,9 @@
 [submodule "backend"]
     path = backend
-    url = "https://github.com/Seyhahaa/tfd-nest-boilerplate.git"
+    url = https://github.com/Seyhahaa/tfd-nest-boilerplate.git
 [submodule "frontend"]
     path = frontend
-    url = "https://github.com/Seyhahaa/tfd-nuxt-tailwind-boilerplate.git"
+    url = https://github.com/Seyhahaa/tfd-nuxt-tailwind-boilerplate.git
+[submodule "tfd-nest-boilerplate"]
+	path = tfd-nest-boilerplate
+	url = https://github.com/Seyhahaa/tfd-nest-boilerplate.git
