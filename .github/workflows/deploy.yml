@@ -1,0 +1,25 @@
+name: deployment
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 154.38.169.101
+          username: root
+          key: ${{ secrets.SSH_KEY }}
+          port: 1133
+          script: |
+            . ~/.nvm/nvm.sh
+            whoami
+            pwd
+            ls
+            cd devops-asm
+            git pull
+            pm2 restart dev-ops
