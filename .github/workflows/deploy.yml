@@ -22,4 +22,4 @@ jobs:
             ls
             cd devops-asm
             git pull
-            pm2 static-page-server-8080
+            pm2 restart static-page-server-8080
