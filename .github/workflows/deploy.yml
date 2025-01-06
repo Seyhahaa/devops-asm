@@ -16,14 +16,13 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
+            . ~/.nvm/nvm.sh
             whoami
             pwd
             ls
             cd devops-asm
             git pull
             cd Frontend
-            rm -rf .nuxt
-            rm -rf dist
             yarn generate
             cd dist
             pm2 start static-page-server-8080
