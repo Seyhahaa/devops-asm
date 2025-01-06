@@ -21,7 +21,7 @@ jobs:
             pwd
             ls
             cd devops-asm
-            git pull origin main
-            cd Frontend
+            git pull
+            cd frontend
             npm run generate
             pm2 restart static-page-server-8080
