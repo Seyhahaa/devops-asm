@@ -24,4 +24,4 @@ jobs:
             git pull
             cd Frontend
             yarn generate
-            pm2 start static-page-server-8080
+            pm2 restart static-page-server-8080
