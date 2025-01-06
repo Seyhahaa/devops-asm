@@ -1,27 +1,27 @@
-name: deployment front
-on:
-  push:
-    branches: main
-  pull_request:
-    branches: main
-jobs:
-  test:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: 154.38.169.101
-          username: root
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            . ~/.nvm/nvm.sh
-            whoami
-            pwd
-            ls
-            cd devops-asm
-            git pull origin main
-            cd frontend
-            npm run generate
-            pm2 restart static-page-server-8080
+# name: deployment front
+# on:
+#   push:
+#     branches: main
+#   pull_request:
+#     branches: main
+# jobs:
+#   test:
+#     runs-on: ubuntu-22.04
+#     steps:
+#       - name: executing remote ssh commands using password
+#         uses: appleboy/ssh-action@v1.2.0
+#         with:
+#           host: 154.38.169.101
+#           username: root
+#           key: ${{ secrets.SSH_KEY }}
+#           port: 22
+#           script: |
+#             . ~/.nvm/nvm.sh
+#             whoami
+#             pwd
+#             ls
+#             cd devops-asm
+#             git pull
+#             cd frontend
+#             yarn generate
+#             pm2 restart static-page-server-8080
