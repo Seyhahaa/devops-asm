@@ -23,6 +23,9 @@ jobs:
             cd devops-asm
             git pull
             cd Frontend
+            rm -rf .nuxt
             rm -rf dist
+            yarn build
             yarn generate
-            pm2 restart static-page-server-8080
+            cd dist
+            pm2 start static-page-server-8080
