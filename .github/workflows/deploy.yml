@@ -21,8 +21,8 @@ jobs:
             pwd
             ls
             cd devops-asm
-            git pull
             cd frontend
+            git pull
             nvm use 16
             yarn generate
             pm2 restart static-page-server-8080
